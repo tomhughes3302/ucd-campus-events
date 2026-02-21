@@ -1,408 +1,164 @@
-<!-- index.html -->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>UCD Campus Events</title>
-  <meta name="description" content="Upcoming UCD campus events — what's on, where, and when." />
+  <meta name="description" content="A simple one-page UCD Campus Events website with sample events." />
   <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <header class="site-header">
-    <div class="container">
-      <div class="brand">
-        <span class="brand-mark" aria-hidden="true">🎓</span>
-        <div>
-          <h1 class="site-title">UCD Campus Events</h1>
-          <p class="site-tagline">A simple one-page list of what’s on around campus.</p>
-        </div>
+  <header class="site-header" id="home">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#home">UCD Campus Events</a>
+      <ul class="nav-links">
+        <li><a href="#events">Events</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="eyebrow">Student life • Workshops • Socials</p>
+      <h1 id="hero-title">Find what’s happening on campus this week</h1>
+      <p class="hero-text">
+        A simple demo page for discovering UCD events. Built with just HTML and CSS, and ready to publish in minutes.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#events">View Upcoming Events</a>
+        <a class="btn btn-secondary" href="#contact">Join Mailing List</a>
       </div>
-
-      <nav class="site-nav" aria-label="Primary">
-        <a href="#events">Events</a>
-        <a href="#info">Info</a>
-      </nav>
-    </div>
+    </section>
   </header>
 
-  <main id="main">
-    <section class="hero" aria-labelledby="intro-title">
-      <div class="container">
-        <h2 id="intro-title">Welcome</h2>
-        <p class="lead">
-          This demo page has clickable components: search, RSVP, show/hide details, and “Add to calendar”.
-        </p>
-        <p class="small-note">
-          Still only two files: <code>index.html</code> and <code>styles.css</code>.
-        </p>
+  <main id="main-content">
+    <section class="panel" id="categories" aria-labelledby="categories-title">
+      <h2 id="categories-title">Event categories</h2>
+      <p class="section-intro">Click to expand the category list.</p>
+
+      <details class="accordion">
+        <summary>Browse categories</summary>
+        <div class="details-content">
+          <ul>
+            <li><strong>Academic:</strong> Study skills, revision sessions, guest talks</li>
+            <li><strong>Careers:</strong> CV workshops, networking, employer sessions</li>
+            <li><strong>Social:</strong> Club meetups, campus socials, welcome events</li>
+            <li><strong>Wellbeing:</strong> Fitness sessions, mindfulness, support workshops</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <section id="events" aria-labelledby="events-title">
+      <div class="section-header">
+        <h2 id="events-title">Upcoming events</h2>
+        <p class="section-intro">Hover cards for a quick preview, then expand each one for extra details.</p>
+      </div>
+
+      <div class="event-grid">
+        <article class="event-card" aria-labelledby="event1-title">
+          <div class="event-top">
+            <span class="tag">Workshop</span>
+            <h3 id="event1-title">AI Study Skills Bootcamp</h3>
+            <p><strong>Date &amp; time:</strong> Tuesday, 4 March 2026 • 1:00 pm – 2:30 pm</p>
+            <p><strong>Location:</strong> O’Brien Centre, Room 1.12</p>
+            <p class="blurb">
+              Learn practical ways to use AI tools for note-taking, study planning, and checking your understanding.
+            </p>
+          </div>
+
+          <details class="accordion">
+            <summary>More details</summary>
+            <div class="details-content">
+              <p><strong>What to bring:</strong> Laptop or tablet, notebook, and student ID.</p>
+              <p><strong>Suitable for:</strong> First-year students in any course.</p>
+              <p><a href="#contact">Reserve a spot (demo link)</a></p>
+            </div>
+          </details>
+        </article>
+
+        <article class="event-card" aria-labelledby="event2-title">
+          <div class="event-top">
+            <span class="tag">Careers</span>
+            <h3 id="event2-title">CV &amp; LinkedIn Clinic</h3>
+            <p><strong>Date &amp; time:</strong> Thursday, 6 March 2026 • 12:00 pm – 1:00 pm</p>
+            <p><strong>Location:</strong> Student Centre, Careers Hub</p>
+            <p class="blurb">
+              Get fast feedback on your CV and LinkedIn profile from career advisers before internship applications open.
+            </p>
+          </div>
+
+          <details class="accordion">
+            <summary>More details</summary>
+            <div class="details-content">
+              <p><strong>Format:</strong> Drop-in clinic with 10-minute review slots.</p>
+              <p><strong>Tip:</strong> Bring a digital copy of your CV on your phone or laptop.</p>
+              <p><a href="#contact">Join mailing list for updates</a></p>
+            </div>
+          </details>
+        </article>
+
+        <article class="event-card" aria-labelledby="event3-title">
+          <div class="event-top">
+            <span class="tag">Social</span>
+            <h3 id="event3-title">Campus Film Night</h3>
+            <p><strong>Date &amp; time:</strong> Friday, 7 March 2026 • 6:30 pm – 9:00 pm</p>
+            <p><strong>Location:</strong> Student Union Hall</p>
+            <p class="blurb">
+              Relax after classes with a student-run film screening, snacks, and a short social before the movie starts.
+            </p>
+          </div>
+
+          <details class="accordion">
+            <summary>More details</summary>
+            <div class="details-content">
+              <p><strong>Entry:</strong> Free for students (spaces are limited).</p>
+              <p><strong>Doors open:</strong> 6:00 pm. Arrive early for the best seats.</p>
+              <p><a href="#contact">Submit an event idea</a></p>
+            </div>
+          </details>
+        </article>
       </div>
     </section>
 
-    <section id="events" class="section" aria-labelledby="events-title">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <h2 id="events-title">Upcoming events</h2>
-            <p class="muted">Example content • Click RSVP to save locally</p>
-          </div>
-          <div class="rsvp-badge" aria-label="RSVP counter">
-            <span class="pill" aria-hidden="true">★</span>
-            <span><strong id="rsvpCount">0</strong> RSVP’d</span>
-          </div>
+    <section class="panel" id="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Quick FAQ</h2>
+
+      <details class="accordion">
+        <summary>How do I submit an event?</summary>
+        <div class="details-content">
+          <p>
+            Use the “Submit an Event” contact link below. For this demo site, it opens an email placeholder.
+          </p>
         </div>
+      </details>
 
-        <div class="toolbar" role="region" aria-label="Event controls">
-          <label class="field">
-            <span class="field-label">Search</span>
-            <input id="searchInput" type="search" placeholder="Try: careers, lake, student centre…" autocomplete="off" />
-          </label>
-
-          <div class="toolbar-actions">
-            <button class="btn" type="button" id="clearBtn">Clear</button>
-            <button class="btn" type="button" id="showRsvpsBtn" aria-pressed="false">Show my RSVP’d</button>
-          </div>
-
-          <p class="muted small" id="resultsNote" aria-live="polite">Showing all events.</p>
+      <details class="accordion">
+        <summary>Can I use this page as a template for my own site?</summary>
+        <div class="details-content">
+          <p>
+            Yes — duplicate the files, rename the content, and publish your own version through GitHub Pages.
+          </p>
         </div>
-
-        <p class="empty" id="emptyState" hidden>No events match your filters.</p>
-
-        <div class="cards" role="list" id="cards">
-          <!-- Event 1 -->
-          <article class="card" role="listitem"
-            data-event-id="societies-showcase"
-            data-title="Societies Showcase"
-            data-location="UCD Student Centre Atrium"
-            data-start="2026-03-03T12:00"
-            data-end="2026-03-03T14:00"
-            data-description="Meet clubs and societies, grab freebies, and find your people for the semester.">
-            <h3 class="card-title">Societies Showcase</h3>
-
-            <dl class="meta">
-              <div>
-                <dt>Date/time</dt>
-                <dd><time datetime="2026-03-03T12:00">Tue 3 Mar, 12:00–14:00</time></dd>
-              </div>
-              <div>
-                <dt>Location</dt>
-                <dd>UCD Student Centre Atrium</dd>
-              </div>
-            </dl>
-
-            <p class="card-text">
-              Meet clubs and societies, grab freebies, and find your people for the semester.
-            </p>
-
-            <div class="actions">
-              <button class="btn" type="button" data-action="details" aria-expanded="false">Details</button>
-              <button class="btn" type="button" data-action="rsvp" aria-pressed="false">RSVP</button>
-              <button class="btn" type="button" data-action="calendar">Add to calendar</button>
-            </div>
-
-            <div class="details" hidden>
-              <ul class="bullets">
-                <li>Best time to arrive: first 30 mins for quieter chats</li>
-                <li>Bring: student ID (if you want to join on the spot)</li>
-                <li>Accessibility: step-free access via main atrium entrance</li>
-              </ul>
-            </div>
-          </article>
-
-          <!-- Event 2 -->
-          <article class="card" role="listitem"
-            data-event-id="careers-cv-clinic"
-            data-title="Careers CV Clinic"
-            data-location="James Joyce Library, Room 2.02"
-            data-start="2026-03-05T10:00"
-            data-end="2026-03-05T12:00"
-            data-description="Quick 10-minute CV feedback sessions with careers advisors. Bring a draft.">
-            <h3 class="card-title">Careers CV Clinic</h3>
-
-            <dl class="meta">
-              <div>
-                <dt>Date/time</dt>
-                <dd><time datetime="2026-03-05T10:00">Thu 5 Mar, 10:00–12:00</time></dd>
-              </div>
-              <div>
-                <dt>Location</dt>
-                <dd>James Joyce Library, Room 2.02</dd>
-              </div>
-            </dl>
-
-            <p class="card-text">
-              Quick 10-minute CV feedback sessions with careers advisors. Bring a draft.
-            </p>
-
-            <div class="actions">
-              <button class="btn" type="button" data-action="details" aria-expanded="false">Details</button>
-              <button class="btn" type="button" data-action="rsvp" aria-pressed="false">RSVP</button>
-              <button class="btn" type="button" data-action="calendar">Add to calendar</button>
-            </div>
-
-            <div class="details" hidden>
-              <ul class="bullets">
-                <li>Bring: laptop or printed CV</li>
-                <li>Goal: leave with 2–3 concrete improvements</li>
-                <li>Tip: include one job ad you’re targeting</li>
-              </ul>
-            </div>
-          </article>
-
-          <!-- Event 3 -->
-          <article class="card" role="listitem"
-            data-event-id="campus-run"
-            data-title="Campus Run (Beginner-friendly)"
-            data-location="Meet at UCD Lake (main path)"
-            data-start="2026-03-07T09:30"
-            data-end="2026-03-07T10:30"
-            data-description="Easy-paced 5 km loop. Walk/jog welcome. Bring water and comfy shoes.">
-            <h3 class="card-title">Campus Run (Beginner-friendly)</h3>
-
-            <dl class="meta">
-              <div>
-                <dt>Date/time</dt>
-                <dd><time datetime="2026-03-07T09:30">Sat 7 Mar, 09:30–10:30</time></dd>
-              </div>
-              <div>
-                <dt>Location</dt>
-                <dd>Meet at UCD Lake (main path)</dd>
-              </div>
-            </dl>
-
-            <p class="card-text">
-              Easy-paced 5 km loop. Walk/jog welcome. Bring water and comfy shoes.
-            </p>
-
-            <div class="actions">
-              <button class="btn" type="button" data-action="details" aria-expanded="false">Details</button>
-              <button class="btn" type="button" data-action="rsvp" aria-pressed="false">RSVP</button>
-              <button class="btn" type="button" data-action="calendar">Add to calendar</button>
-            </div>
-
-            <div class="details" hidden>
-              <ul class="bullets">
-                <li>Route: paved paths, beginner pace</li>
-                <li>Weather plan: light rain goes ahead; storms cancel</li>
-                <li>Bring: water, jacket, comfy shoes</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="info" class="section alt" aria-labelledby="info-title">
-      <div class="container">
-        <h2 id="info-title">Info</h2>
-        <ul class="info-list">
-          <li><strong>How to update:</strong> Edit the event cards in <code>index.html</code>.</li>
-          <li><strong>RSVP:</strong> Saved in your browser (localStorage), not a real backend.</li>
-          <li><strong>Contact:</strong> <a href="mailto:events@example.ucd.ie">events@example.ucd.ie</a> (sample)</li>
-        </ul>
-      </div>
+      </details>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p class="muted">© <span id="year">2026</span> UCD Campus Events • Demo site</p>
-      <p class="muted">Built with HTML + CSS + a tiny bit of JS</p>
+  <footer class="site-footer" id="contact" aria-labelledby="contact-title">
+    <h2 id="contact-title">Contact</h2>
+    <p>
+      Questions or submissions:
+      <a href="mailto:events@ucd.example?subject=UCD%20Campus%20Event%20Submission">events@ucd.example</a>
+    </p>
+    <div class="footer-actions">
+      <a class="btn btn-primary" href="mailto:events@ucd.example?subject=UCD%20Campus%20Event%20Submission">Submit an Event</a>
+      <a class="btn btn-secondary" href="mailto:events@ucd.example?subject=UCD%20Campus%20Mailing%20List">Join Mailing List</a>
     </div>
+    <p class="footer-note">Demo site for a beginner-friendly end-to-end web publishing workflow.</p>
   </footer>
-
-  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
-
-  <script>
-    const $ = (sel, root = document) => root.querySelector(sel);
-
-    const cardsEl = $("#cards");
-    const searchInput = $("#searchInput");
-    const clearBtn = $("#clearBtn");
-    const showRsvpsBtn = $("#showRsvpsBtn");
-    const emptyState = $("#emptyState");
-    const resultsNote = $("#resultsNote");
-    const rsvpCountEl = $("#rsvpCount");
-    const toastEl = $("#toast");
-
-    const STORAGE_KEY = "ucdCampusEvents:rsvps";
-    let showRsvpsOnly = false;
-
-    function loadRsvps() {
-      try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}"); }
-      catch { return {}; }
-    }
-    function saveRsvps(map) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(map));
-    }
-
-    function toast(msg) {
-      toastEl.textContent = msg;
-      toastEl.hidden = false;
-      toastEl.classList.add("show");
-      clearTimeout(toastEl._t);
-      toastEl._t = setTimeout(() => {
-        toastEl.classList.remove("show");
-        toastEl.hidden = true;
-      }, 1800);
-    }
-
-    function normalise(s) { return (s || "").toLowerCase().trim(); }
-    function getCardText(card) {
-      const { title = "", location = "", description = "" } = card.dataset;
-      return normalise(`${title} ${location} ${description}`);
-    }
-
-    function updateRsvpUI() {
-      const rsvps = loadRsvps();
-      const cards = [...cardsEl.querySelectorAll(".card")];
-      let count = 0;
-
-      for (const card of cards) {
-        const id = card.dataset.eventId;
-        const isOn = Boolean(rsvps[id]);
-        const rsvpBtn = card.querySelector('[data-action="rsvp"]');
-        if (rsvpBtn) {
-          rsvpBtn.setAttribute("aria-pressed", String(isOn));
-          rsvpBtn.textContent = isOn ? "RSVP’d" : "RSVP";
-        }
-        if (isOn) count++;
-      }
-      rsvpCountEl.textContent = String(count);
-    }
-
-    function applyFilters() {
-      const q = normalise(searchInput.value);
-      const rsvps = loadRsvps();
-      const cards = [...cardsEl.querySelectorAll(".card")];
-
-      let shown = 0;
-      for (const card of cards) {
-        const matchesSearch = !q || getCardText(card).includes(q);
-        const matchesRsvp = !showRsvpsOnly || Boolean(rsvps[card.dataset.eventId]);
-        const show = matchesSearch && matchesRsvp;
-
-        card.hidden = !show;
-        if (show) shown++;
-      }
-
-      emptyState.hidden = shown !== 0;
-
-      const parts = [];
-      parts.push(showRsvpsOnly ? "Showing RSVP’d events" : "Showing all events");
-      if (q) parts.push(`matching “${searchInput.value.trim()}”`);
-      parts.push(`(${shown} shown)`);
-      resultsNote.textContent = parts.join(" ");
-    }
-
-    function formatICS(dt) {
-      const cleaned = (dt || "").replaceAll("-", "").replaceAll(":", "");
-      return cleaned + "00"; // YYYYMMDDTHHMMSS
-    }
-    function escapeICS(text) {
-      return (text || "")
-        .replaceAll("\\\\", "\\\\\\\\")
-        .replaceAll("\\n", "\\\\n")
-        .replaceAll(",", "\\\\,")
-        .replaceAll(";", "\\\\;");
-    }
-
-    function downloadCalendar(card) {
-      const id = card.dataset.eventId;
-      const title = card.dataset.title;
-      const location = card.dataset.location;
-      const start = card.dataset.start;
-      const end = card.dataset.end;
-      const desc = card.dataset.description;
-
-      const dtstamp = new Date().toISOString()
-        .replaceAll("-", "").replaceAll(":", "").split(".")[0] + "Z";
-
-      const ics = [
-        "BEGIN:VCALENDAR",
-        "VERSION:2.0",
-        "PRODID:-//UCD Campus Events//EN",
-        "CALSCALE:GREGORIAN",
-        "BEGIN:VEVENT",
-        `UID:${id}@ucd-campus-events`,
-        `DTSTAMP:${dtstamp}`,
-        `DTSTART:${formatICS(start)}`,
-        `DTEND:${formatICS(end)}`,
-        `SUMMARY:${escapeICS(title)}`,
-        `LOCATION:${escapeICS(location)}`,
-        `DESCRIPTION:${escapeICS(desc)}`,
-        "END:VEVENT",
-        "END:VCALENDAR"
-      ].join("\\r\\n");
-
-      const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
-      const url = URL.createObjectURL(blob);
-
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = `${id}.ics`;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-
-      URL.revokeObjectURL(url);
-      toast("Calendar file downloaded.");
-    }
-
-    $("#year").textContent = String(new Date().getFullYear());
-    updateRsvpUI();
-    applyFilters();
-
-    searchInput.addEventListener("input", applyFilters);
-
-    clearBtn.addEventListener("click", () => {
-      searchInput.value = "";
-      searchInput.focus();
-      applyFilters();
-      toast("Search cleared.");
-    });
-
-    showRsvpsBtn.addEventListener("click", () => {
-      showRsvpsOnly = !showRsvpsOnly;
-      showRsvpsBtn.setAttribute("aria-pressed", String(showRsvpsOnly));
-      showRsvpsBtn.textContent = showRsvpsOnly ? "Show all" : "Show my RSVP’d";
-      applyFilters();
-    });
-
-    cardsEl.addEventListener("click", (e) => {
-      const btn = e.target.closest("button[data-action]");
-      if (!btn) return;
-
-      const card = btn.closest(".card");
-      const action = btn.dataset.action;
-
-      if (action === "details") {
-        const details = card.querySelector(".details");
-        const isOpen = !details.hidden;
-        details.hidden = isOpen;
-        btn.setAttribute("aria-expanded", String(!isOpen));
-        toast(!isOpen ? "Details opened." : "Details closed.");
-      }
-
-      if (action === "rsvp") {
-        const id = card.dataset.eventId;
-        const rsvps = loadRsvps();
-        rsvps[id] = !rsvps[id];
-        if (!rsvps[id]) delete rsvps[id];
-        saveRsvps(rsvps);
-
-        updateRsvpUI();
-        applyFilters();
-        toast(rsvps[id] ? "RSVP saved." : "RSVP removed.");
-      }
-
-      if (action === "calendar") {
-        downloadCalendar(card);
-      }
-    });
-  </script>
 </body>
 </html>
