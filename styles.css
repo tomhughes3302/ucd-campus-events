@@ -1,0 +1,341 @@
+/* UCD Campus Events - beginner-friendly HTML/CSS demo */
+
+:root {
+  --bg: #f6f8fb;
+  --surface: #ffffff;
+  --surface-muted: #eef2f7;
+  --text: #142033;
+  --text-soft: #4a5a73;
+  --border: #d6deea;
+  --accent: #0a66ff;
+  --accent-strong: #084fcc;
+  --accent-soft: #e8f0ff;
+  --success-chip: #eaf7ee;
+  --success-chip-text: #14532d;
+  --shadow: 0 10px 25px rgba(16, 24, 40, 0.08);
+  --radius: 14px;
+  --max-width: 980px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e1218;
+    --surface: #151b23;
+    --surface-muted: #10161d;
+    --text: #e8eef7;
+    --text-soft: #b7c3d6;
+    --border: #2a3442;
+    --accent: #77a7ff;
+    --accent-strong: #9bbdff;
+    --accent-soft: #1a2740;
+    --success-chip: #13261a;
+    --success-chip-text: #abefc6;
+    --shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  background: var(--bg);
+  color: var(--text);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(100% - 2rem, var(--max-width));
+  margin-inline: auto;
+}
+
+.skip-link {
+  position: absolute;
+  left: 0.75rem;
+  top: -3rem;
+  background: var(--accent);
+  color: white;
+  padding: 0.6rem 0.9rem;
+  border-radius: 0.6rem;
+  text-decoration: none;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 0.75rem;
+}
+
+.site-header {
+  padding: 2.25rem 0 1.25rem;
+  background:
+    radial-gradient(circle at top right, rgba(10, 102, 255, 0.12), transparent 45%),
+    radial-gradient(circle at top left, rgba(10, 102, 255, 0.08), transparent 35%);
+  border-bottom: 1px solid var(--border);
+}
+
+.eyebrow {
+  display: inline-block;
+  margin: 0 0 0.4rem 0;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  background: var(--surface);
+}
+
+h1, h2, h3 {
+  line-height: 1.15;
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 0.6rem;
+  font-size: clamp(1.9rem, 2.4vw + 1rem, 3rem);
+}
+
+h2 {
+  margin-bottom: 0.5rem;
+  font-size: clamp(1.35rem, 1.2vw + 1rem, 2rem);
+}
+
+.lede,
+.section-intro {
+  color: var(--text-soft);
+  max-width: 65ch;
+  margin-top: 0;
+}
+
+.site-nav {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.site-nav a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  transition: transform 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.site-nav a:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent);
+}
+
+.site-nav a:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--accent) 35%, white);
+  outline-offset: 2px;
+  border-color: var(--accent);
+}
+
+.hero-actions {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 0.8rem;
+  padding: 0.7rem 1rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+.button:focus-visible,
+.text-link:focus-visible,
+summary:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--accent) 38%, white);
+  outline-offset: 3px;
+  border-radius: 0.5rem;
+}
+
+.button-primary {
+  background: var(--accent);
+  color: white;
+}
+
+.button-primary:hover {
+  background: var(--accent-strong);
+}
+
+.button-secondary {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.button-secondary:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.hero-details {
+  margin-top: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.75rem 0.9rem;
+}
+
+.hero-details summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.hero-details p {
+  margin: 0.6rem 0 0;
+  color: var(--text-soft);
+}
+
+.section {
+  padding: 1.5rem 0;
+}
+
+.section-muted {
+  background: var(--surface-muted);
+  border-block: 1px solid var(--border);
+}
+
+.event-grid {
+  margin-top: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.event-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: clip;
+}
+
+.event-card details {
+  height: 100%;
+}
+
+.event-card summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1rem;
+  display: grid;
+  gap: 0.6rem;
+  align-items: start;
+}
+
+.event-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.event-card summary::after {
+  content: "Open details ▾";
+  font-size: 0.85rem;
+  color: var(--text-soft);
+}
+
+.event-card details[open] summary::after {
+  content: "Hide details ▴";
+}
+
+.event-card summary:hover {
+  background: color-mix(in srgb, var(--accent-soft) 45%, var(--surface));
+}
+
+.event-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.event-chip {
+  justify-self: start;
+  font-size: 0.8rem;
+  border-radius: 999px;
+  padding: 0.2rem 0.55rem;
+  background: var(--success-chip);
+  color: var(--success-chip-text);
+  border: 1px solid color-mix(in srgb, var(--success-chip-text) 20%, var(--border));
+}
+
+.event-body {
+  border-top: 1px solid var(--border);
+  padding: 0.95rem 1rem 1rem;
+}
+
+.event-body p {
+  margin: 0 0 0.75rem;
+}
+
+.text-link {
+  color: var(--accent);
+  font-weight: 600;
+  text-underline-offset: 2px;
+}
+
+.text-link:hover {
+  color: var(--accent-strong);
+}
+
+.faq-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.85rem 0.95rem;
+  margin-top: 0.75rem;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.faq-item p {
+  margin: 0.6rem 0 0;
+  color: var(--text-soft);
+}
+
+.small-note {
+  color: var(--text-soft);
+  font-size: 0.92rem;
+}
+
+.site-footer {
+  padding: 1.25rem 0 2rem;
+  color: var(--text-soft);
+  font-size: 0.95rem;
+}
+
+/* Small screen polish */
+@media (max-width: 520px) {
+  .hero-actions .button {
+    width: 100%;
+    text-align: center;
+  }
+}

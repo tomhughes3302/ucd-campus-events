@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="UCD Campus Events - a simple one-page student events website." />
+  <title>UCD Campus Events</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="home">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <p class="eyebrow">UCD Student Life</p>
+      <h1>UCD Campus Events</h1>
+      <p class="lede">
+        Find upcoming campus events, workshops, and socials. This demo page is built with plain HTML and CSS only.
+      </p>
+
+      <nav aria-label="Primary navigation" class="site-nav">
+        <a href="#home">Home</a>
+        <a href="#events">Events</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="hero-actions">
+        <a class="button button-primary" href="#events">View Events</a>
+        <a class="button button-secondary" href="#contact">Contact Organisers</a>
+      </div>
+
+      <details class="hero-details">
+        <summary>What should I bring?</summary>
+        <p>
+          Bring your student ID, a notebook (or laptop) for workshops, and a friend for the social events.
+        </p>
+      </details>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section id="events" class="section">
+      <div class="container">
+        <h2>Upcoming Events</h2>
+        <p class="section-intro">
+          Click each event card to expand details.
+        </p>
+
+        <div class="event-grid" role="list">
+          <article class="event-card" role="listitem">
+            <details>
+              <summary>
+                <span class="event-title">AI Study Sprint for Beginners</span>
+                <span class="event-chip">Workshop</span>
+              </summary>
+              <div class="event-body">
+                <p><strong>Date/Time:</strong> Tuesday, 3 March · 4:00 pm – 5:30 pm</p>
+                <p><strong>Location:</strong> UCD James Joyce Library, Room 2.12</p>
+                <p><strong>Blurb:</strong> A practical session on study techniques, prompt basics, and simple AI tools for first-year assignments.</p>
+                <a class="text-link" href="#contact">Ask a question about this event</a>
+              </div>
+            </details>
+          </article>
+
+          <article class="event-card" role="listitem">
+            <details>
+              <summary>
+                <span class="event-title">Campus Careers Coffee Chat</span>
+                <span class="event-chip">Networking</span>
+              </summary>
+              <div class="event-body">
+                <p><strong>Date/Time:</strong> Thursday, 5 March · 12:30 pm – 1:30 pm</p>
+                <p><strong>Location:</strong> Student Centre Café</p>
+                <p><strong>Blurb:</strong> Meet senior students and recent grads to hear tips on internships, CVs, and balancing coursework with applications.</p>
+                <a class="text-link" href="#faq">See common questions</a>
+              </div>
+            </details>
+          </article>
+
+          <article class="event-card" role="listitem">
+            <details>
+              <summary>
+                <span class="event-title">Friday Games & Pizza Social</span>
+                <span class="event-chip">Social</span>
+              </summary>
+              <div class="event-body">
+                <p><strong>Date/Time:</strong> Friday, 6 March · 6:00 pm – 8:00 pm</p>
+                <p><strong>Location:</strong> UCD Village Common Room</p>
+                <p><strong>Blurb:</strong> A relaxed social evening with board games, casual meet-and-greets, and pizza. Great for making friends in your first semester.</p>
+                <a class="text-link" href="#home">Back to top</a>
+              </div>
+            </details>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section section-muted">
+      <div class="container">
+        <h2>FAQ</h2>
+
+        <details class="faq-item">
+          <summary>Do I need to register?</summary>
+          <p>For this demo site, no registration is required. In a real site, you could link the button to a booking form.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Are these events free?</summary>
+          <p>Yes — all sample events on this page are free for UCD students.</p>
+        </details>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>If you have questions, email the student organisers:</p>
+        <p>
+          <a class="button button-primary" href="mailto:events@ucd.ie?subject=Question%20about%20UCD%20Campus%20Events">
+            Email Organisers
+          </a>
+        </p>
+        <p class="small-note">
+          Demo contact link only — replace with your real email or form later.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 UCD Campus Events Demo · Built with HTML + CSS only</p>
+    </div>
+  </footer>
+</body>
+</html>
